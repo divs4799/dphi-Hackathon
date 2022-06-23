@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/dphi-hackathon/static/js/main.169e2a77.js",
+    "main.js": "/dphi-hackathon/static/js/main.b3012175.js",
     "index.html": "/dphi-hackathon/index.html",
-    "main.169e2a77.js.map": "/dphi-hackathon/static/js/main.169e2a77.js.map"
+    "main.b3012175.js.map": "/dphi-hackathon/static/js/main.b3012175.js.map"
   },
   "entrypoints": [
-    "static/js/main.169e2a77.js"
+    "static/js/main.b3012175.js"
   ]
 }

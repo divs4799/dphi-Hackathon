@@ -15,12 +15,12 @@ import {
 export default function App() {
   return (
   
-    <BrowserRouter >
+    <BrowserRouter  >
     <div className="App">
       <Header />
           <Routes>
           <Route path="/createChallenge" element= {<Newchallenge />} />
-          <Route path="/" element={<Home />} />
+          <Route path="/"   element={<Home />} />
           <Route path="/challenge/:challengeID" element={<Details />} />
              
           </Routes> 

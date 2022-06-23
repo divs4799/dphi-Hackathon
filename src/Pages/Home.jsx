@@ -15,10 +15,13 @@ function createChallenge(challenge){
       level={challenge.level}
     />)
   }
-  
+  function searchChallenge(searchValue){
+    console.log(searchValue);
+  } 
   var localChallenges = getData()|| [];
   
   function Home(){
+    const [searchInput, setSearchInput] = react.useState('');
   
   let navigate =useNavigate();
     return (
@@ -84,7 +87,7 @@ function createChallenge(challenge){
   <div className="search">
 
   <img src="./images/magnifying-glass-solid.svg" alt=""  />
-  <input type="text" placeholder="Search"></input>
+  <input type="text" placeholder="Search" id="search" onChange={searchChallenge(event.target.value)} ></input>
   </div>
   <select name="filter" list="Filter" id="filter" >Filter
                     <option value="" disabled >Filter</option>
