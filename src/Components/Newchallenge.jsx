@@ -4,22 +4,20 @@ import {getData,setData} from "./LocalStorage.js";
 import Challenges  from "../data.js";
 
 var challengeArray = getData()|| [];
-var count;
-if(challengeArray==[]){
-    count = Challenges.length() +1
-}else{
-    count = Challenges.length + challengeArray.length+1;
-}
+
+var count = challengeArray.length + Challenges.length + 1;
+
+
 function submitForm(){
 var Challenge ={};
 Challenge.id = count;
 Challenge.name= document.querySelector("#name").value;
-Challenge.startDate = new Date (document.querySelector("#startDate").value);
-Challenge.endDate = new Date (document.querySelector("#endDate").value);
+Challenge.startDate = new Date(document.querySelector("#startDate").value);
+Challenge.endDate =  new Date(document.querySelector("#endDate").value);
 Challenge.description = document.querySelector("#description").value;
 Challenge.url = document.querySelector("#image").src    ;
 Challenge.level = document.querySelector("#level"). value;
-
+count++;
 challengeArray.push(Challenge);
 setData(challengeArray);
 }
@@ -40,7 +38,11 @@ function previewFile() {
     }
     return dataUrl;
   }
-
+function checkFile(){
+    if(document.querySelector("#image").src!=""){
+        var BTN = document.querySelector("#uploadBTN").innerHTML="Change Image";
+    }
+}
 function Newchallenge(){
     return (
         <section id="createChallenge">
@@ -65,11 +67,11 @@ function Newchallenge(){
             </div>
             <div className="row">
                 <label >Image</label>
+                <img id="image" src="" />
                 <div className="fileUpload">
-                <button id="uploadBTN">Upload  <img src="./images/cloud-upload.svg" /></button>
+                <button id="uploadBTN" onClick={checkFile} >Upload <img src="./images/cloud-upload.svg" /></button>
                 <input type="file" name="image" id="file" onChange={previewFile} />
                 </div>
-                <img id="image" src="" />
             </div>
             <div className="row">
                 <label >Level Type</label>

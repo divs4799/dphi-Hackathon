@@ -29,13 +29,14 @@ function Challengcard(props) {
   var today = new Date();
   
   var endDate =props.endDate;
+
  var startDate = props.startDate
   var daysLeft,hoursLeft,minLeft;
   var Time,status;
   if(today < startDate){
     challengState = "Starts in";
     status = <div className="status upcoming">Upcoming</div>;
-    daysLeft = Math.abs(startDate.getDay() - today.getDay());
+    daysLeft = Math.abs(startDate.getDate() - today.getDate());
     hoursLeft = Math.abs( startDate.getHours() - today.getHours());
     minLeft = Math.abs(startDate.getMinutes() - today.getMinutes());
     
@@ -44,11 +45,11 @@ function Challengcard(props) {
     challengState="Ends in";
     
     status = <div className="status active">Active</div>;
-    daysLeft = endDate.getDay() - today.getDay();
-    hoursLeft = endDate.getHours()- today.getHours();
-    minLeft = endDate.getMinutes() - today.getMinutes();
+    daysLeft =  Math.abs(endDate.getDate() - today.getDate());
+    hoursLeft =  Math.abs(endDate.getHours()- today.getHours());
+    minLeft =  Math.abs(endDate.getMinutes() - today.getMinutes());
   }
-  console.log(today < startDate)
+ 
     if(today > endDate){
       challengState="Ended On";
       status = <div className="status past">Past</div>;
@@ -72,7 +73,7 @@ function Challengcard(props) {
     <h2 className="challengeName poppins">{props.name}</h2>
     <p className="challengeState poppins" >{challengState}</p>
       {Time}
-  <button onClick={()=>navigate("/challenge/"+props.challengeID)}  className="challengeBTN poppins">Participate Now</button>
+  <button onClick={()=>navigate("/challenge/"+ props.challengeID)}  className="challengeBTN poppins">Participate Now</button>
 </div>);
 }
 export { Achievementcard,Participatecard,Challengcard };
