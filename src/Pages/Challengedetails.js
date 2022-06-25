@@ -29,7 +29,7 @@ function Details(){
         </div>
         <div className="detailsHeading poppins">{displayChallnge[0].name}</div>
         <div className="shortDesc">{displayChallnge[0].description.substring(0,70)}</div>
-        <div className="level"><img src="/images/level-icon.svg" / > {displayChallnge[0].level}</div>
+        <div className="level"><img src="./images/level-icon.svg" / > {displayChallnge[0].level}</div>
         </div>
 </section>
 <section id="options">
