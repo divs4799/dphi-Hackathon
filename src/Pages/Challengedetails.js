@@ -40,7 +40,7 @@ function Details(){
     </div>
 </section>
 <section className="detailsDescription poppins">{displayChallnge[0].description}</section>
-    </div>)
+    </div>   )
 }
 
 export default Details;
